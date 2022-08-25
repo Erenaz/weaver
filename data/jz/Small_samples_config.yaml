@@ -20,8 +20,8 @@ selection:
           (fj_isQCDlep == 1) |
           (fj_isQCDothers == 1) ) &
         (fj_genRes_mass<0) ) |
-      ( (fj_H_WW_4q==1) &
-        (fj_maxdR_HWW_daus<2.5) &
+      ( (fj_H_VV_4q==1) &
+        (fj_maxdR_HVV_daus<2.5) &
         (fj_nProngs>1) &
         (fj_genRes_mass>0) ) )
 
@@ -40,8 +40,8 @@ test_time_selection:
           (fj_isQCDlep == 1) |
           (fj_isQCDothers == 1) ) &
         (fj_genRes_mass<0) ) |
-      ( (fj_H_WW_4q==1) &
-        (fj_maxdR_HWW_daus<2.0) &
+      ( (fj_H_VV_4q==1) &
+        (fj_maxdR_HVV_daus<2.0) &
         (fj_nProngs>1) &
         (fj_genRes_mass>0) ) )
 
@@ -57,18 +57,18 @@ new_variables:
     fj_isToplep_merged: (fj_isToplep==1) & (fj_nProngs>=2)  # so that you have at least the lepton and the b merged in the leptonic case
     fj_QCD_label: (fj_isQCDb==1) | (fj_isQCDbb==1) | (fj_isQCDc==1) | (fj_isQCDcc==1) | (fj_isQCDlep==1) | (fj_isQCDothers==1)
     # Signal (HVV)
-    fj_isHWW_elenuqq_merged: (fj_H_VV_elenuqq==1) & (fj_nProngs==4)
-    fj_isHWW_elenuqq_semimerged: (fj_H_VV_elenuqq==1) & (fj_nProngs==3)
-    fj_isHWW_munuqq_merged: (fj_H_VV_munuqq==1) & (fj_nProngs==4)
-    fj_isHWW_munuqq_semimerged: (fj_H_VV_munuqq==1) & (fj_nProngs==3)
-    fj_isHWW_mutaunuqq_merged: (fj_H_VV_mutaunuqq==1) & (fj_nProngs==4)
-    fj_isHWW_mutaunuqq_semimerged: (fj_H_VV_mutaunuqq==1) & (fj_nProngs==3)
-    fj_isHWW_eletaunuqq_merged: (fj_H_VV_eletaunuqq==1) & (fj_nProngs==4)
-    fj_isHWW_eletaunuqq_semimerged: (fj_H_VV_eletaunuqq==1) & (fj_nProngs==3)
-    fj_isHWW_hadtaunuqq_merged: (fj_H_VV_hadtaunuqq==1) & (fj_nProngs==4)
-    fj_isHWW_hadtaunuqq_semimerged: (fj_H_VV_hadtaunuqq==1) & (fj_nProngs==3)
-    fj_H_WW_4q_3q: (fj_H_VV_4q==1) & (fj_nProngs==3)
-    fj_H_WW_4q_4q: (fj_H_VV_4q==1) & (fj_nProngs==4)
+    fj_isHVV_elenuqq_merged: (fj_H_VV_elenuqq==1) & (fj_nProngs==4)
+    fj_isHVV_elenuqq_semimerged: (fj_H_VV_elenuqq==1) & (fj_nProngs==3)
+    fj_isHVV_munuqq_merged: (fj_H_VV_munuqq==1) & (fj_nProngs==4)
+    fj_isHVV_munuqq_semimerged: (fj_H_VV_munuqq==1) & (fj_nProngs==3)
+    fj_isHVV_mutaunuqq_merged: (fj_H_VV_mutaunuqq==1) & (fj_nProngs==4)
+    fj_isHVV_mutaunuqq_semimerged: (fj_H_VV_mutaunuqq==1) & (fj_nProngs==3)
+    fj_isHVV_eletaunuqq_merged: (fj_H_VV_eletaunuqq==1) & (fj_nProngs==4)
+    fj_isHVV_eletaunuqq_semimerged: (fj_H_VV_eletaunuqq==1) & (fj_nProngs==3)
+    fj_isHVV_hadtaunuqq_merged: (fj_H_VV_hadtaunuqq==1) & (fj_nProngs==4)
+    fj_isHVV_hadtaunuqq_semimerged: (fj_H_VV_hadtaunuqq==1) & (fj_nProngs==3)
+    fj_H_VV_4q_3q: (fj_H_VV_4q==1) & (fj_nProngs==3)
+    fj_H_VV_4q_4q: (fj_H_VV_4q==1) & (fj_nProngs==4)
 
 
 preprocess:
@@ -162,8 +162,8 @@ observers:
    - fj_dR_W
    - fj_dR_Wstar
    - fj_PN_H4qvsQCD
-   - fj_mindR_HWW_daus
-   - fj_maxdR_HWW_daus
+   - fj_mindR_HVV_daus
+   - fj_maxdR_HVV_daus
    - fj_genRes_mass
    - fj_genWstar_mass
    - fj_genW_pt
