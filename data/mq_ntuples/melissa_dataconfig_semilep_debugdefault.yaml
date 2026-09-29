@@ -58,7 +58,7 @@ new_variables:
     fj_isHVV_hadtau: (fj_H_VV_hadtauvqq==1)
     fj_isHVV_leptau: ((fj_H_VV_leptauelvqq==1) | (fj_H_VV_leptaumuvqq==1))
     fj_isHVV_istau: ((fj_H_VV_leptauelvqq==1) | (fj_H_VV_leptaumuvqq==1) | (fj_H_VV_hadtauvqq==1))
-    fj_sig_label: ((fj_H_VV_elenuqq==1) | (fj_H_VV_munuqq==1) | ((fj_H_VV_leptauelvqq==1) | (fj_H_VV_leptaumuvqq==1) | (fj_H_VV_hadtauvqq==1)))
+    fj_sig_label: ((fj_H_VV_elenuqq==1) | (fj_H_VV_munuqq==1) | ((fj_H_VV_leptauelvqq==1) | (fj_H_VV_leptaumuvqq==1) | (fj_H_VV_hadtauvqq==1)) )
 
 preprocess:
     ### method: [manual, auto] - whether to use manually specified parameters for variable standardization
@@ -138,7 +138,7 @@ labels:
 
     type: simple
     value: [
-        fj_ttbar_lepmerged, fj_ttbar_lepsplit, fj_wjets_lepmerged, fj_wjets_lepsplit, fj_QCD_label,
+        fj_ttbar_label, fj_wjets_label,
         fj_isHVV_elenuqq, fj_isHVV_munuqq, fj_H_VV_leptauelvqq, fj_H_VV_leptaumuvqq, fj_H_VV_hadtauvqq
     ]
 
@@ -178,8 +178,14 @@ observers:
    - lep_pt
    - lep_dR_fj
    - met_relpt
-   - fj_ttbar_bmerged
-   - fj_ttbar_bsplit
+   - fj_QCD_label
+   - fj_sig_label
+   - fj_bkgd_label
+   - fj_ttbar_lepmerged
+   - fj_ttbar_lepsplit
+   - fj_wjets_lepsplit
+   - fj_wjets_lepmerged
+   - fj_V_2q
 
 weights:
    ### [option 1] use precomputed weights stored in the input files

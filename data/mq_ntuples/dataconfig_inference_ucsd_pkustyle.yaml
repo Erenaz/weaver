@@ -49,6 +49,8 @@ new_variables:
     fj_wjets_lepsplit: (fj_lepinprongs!=1) & ((fj_V_2q==1) | (fj_V_elenu==1) | (fj_V_munu==1) | (fj_V_taunu==1))
     fj_wjets_label: ((fj_V_2q==1) | (fj_V_elenu==1) | (fj_V_munu==1) | (fj_V_taunu==1))
     fj_bkgd_label: (((fj_V_2q==1) | (fj_V_elenu==1) | (fj_V_munu==1) | (fj_V_taunu==1)) |((fj_Top_2q==1) | (fj_Top_elenu==1) | (fj_Top_munu==1) | (fj_Top_taunu==1))  |((fj_isQCDb==1) | (fj_isQCDbb==1) | (fj_isQCDc==1) | (fj_isQCDcc==1) | (fj_isQCDothers==1)) )
+    fj_lep_wjets_label: ((fj_V_elenu==1) | (fj_V_munu==1) | (fj_V_taunu==1))
+    fj_had_wjets_label: ((fj_V_2q==1))
     #
     # signal (HVV)
     fj_isHVV_elenuqq: (fj_H_VV_elenuqq==1)
@@ -58,7 +60,48 @@ new_variables:
     fj_isHVV_hadtau: (fj_H_VV_hadtauvqq==1)
     fj_isHVV_leptau: ((fj_H_VV_leptauelvqq==1) | (fj_H_VV_leptaumuvqq==1))
     fj_isHVV_istau: ((fj_H_VV_leptauelvqq==1) | (fj_H_VV_leptaumuvqq==1) | (fj_H_VV_hadtauvqq==1))
-    fj_sig_label: ((fj_H_VV_elenuqq==1) | (fj_H_VV_munuqq==1) | ((fj_H_VV_leptauelvqq==1) | (fj_H_VV_leptaumuvqq==1) | (fj_H_VV_hadtauvqq==1)))
+    fj_sig_label: ((fj_H_VV_elenuqq==1) | (fj_H_VV_munuqq==1) | ((fj_H_VV_leptauelvqq==1) | (fj_H_VV_leptaumuvqq==1) | (fj_H_VV_hadtauvqq==1))
+    label_H_WqqWqq_0c: ( (fj_H_VV_4q==1) & (fj_nprongs==4) & (fj_ncquarks==0) )
+    label_H_WqqWqq_1c: ( (fj_H_VV_4q==1) & (fj_nprongs==4) & (fj_ncquarks==1) )
+    label_H_WqqWqq_2c: ( (fj_H_VV_4q==1) & (fj_nprongs==4) & (fj_ncquarks==2) )
+    label_H_WqqWq_0c: ( (fj_H_VV_4q==1) & (fj_nprongs==3) & (fj_ncquarks==0) )
+    label_H_WqqWq_1c: ( (fj_H_VV_4q==1) & (fj_nprongs==3) & (fj_ncquarks==1) )
+    label_H_WqqWq_2c: ( (fj_H_VV_4q==1) & (fj_nprongs==3) & (fj_ncquarks==2) )
+    label_H_WqqWev_0c: ( (fj_H_VV_elenuqq==1) & (fj_nprongs==2) & (fj_ncquarks==0) )
+    label_H_WqqWev_1c: ( (fj_H_VV_elenuqq==1) & (fj_nprongs==2) & (fj_ncquarks==1) )
+    label_H_WqqWmv_0c: ( (fj_H_VV_munuqq==1) & (fj_nprongs==2) & (fj_ncquarks==0) )
+    label_H_WqqWmv_1c: ( (fj_H_VV_munuqq==1) & (fj_nprongs==2) & (fj_ncquarks==1) )
+    label_H_WqqWtauev_0c: ( (fj_H_VV_leptauelvqq==1) & (fj_nprongs==2) & (fj_ncquarks==0) )
+    label_H_WqqWtauev_1c: ( (fj_H_VV_leptauelvqq==1) & (fj_nprongs==2) & (fj_ncquarks==1) )
+    label_H_WqqWtaumv_0c: ( (fj_H_VV_leptaumuvqq==1) & (fj_nprongs==2) & (fj_ncquarks==0) )
+    label_H_WqqWtaumv_1c: ( (fj_H_VV_leptaumuvqq==1) & (fj_nprongs==2) & (fj_ncquarks==1) )
+    label_H_WqqWtauhv_0c: label_H_WqqWtauhv_0c: ( (fj_H_VV_hadtauvqq==1) & (fj_nprongs==2) & (fj_ncquarks==0) )
+    label_H_WqqWtauhv_1c: label_H_WqqWtauhv_1c: ( (fj_H_VV_hadtauvqq==1) & (fj_nprongs==2) & (fj_ncquarks==1) )
+    label_H_WqqWqq: ( (fj_H_VV_4q==1) & (fj_nprongs==4) )
+    label_H_WqqWq: ( (fj_H_VV_4q==1) & (fj_nprongs==3) )
+    label_H_WqqWev: ( (fj_H_VV_elenuqq==1) & (fj_nprongs==2) )
+    label_H_WqqWmv: ( (fj_H_VV_munuqq==1) & (fj_nprongs==2) )
+    label_H_WqqWtauev: ( (fj_H_VV_leptauelvqq==1) & (fj_nprongs==2) )
+    label_H_WqqWtaumv: ( (fj_H_VV_leptaumuvqq==1) & (fj_nprongs==2) )
+    label_H_WqqWtauhv: label_H_WqqWtauhv_0c: ( (fj_H_VV_hadtauvqq==1) & (fj_nprongs==2) )
+    label_QCD_bb: (fj_isQCDbb==1)
+    label_QCD_cc: (fj_isQCDcc==1)
+    label_QCD_b: (fj_isQCDb==1)
+    label_QCD_c: (fj_isQCDc==1)
+    label_QCD_others: (fj_isQCDothers==1)
+    label_Top_bWqq_0c: ( (fj_Top_2q==1) & (fj_nprongs == 2)  & (fj_Top_bmerged==1) & (fj_ncquarks==0) ) 
+    label_Top_bWqq_1c: ( (fj_Top_2q==1) & (fj_nprongs == 2) & (fj_Top_bmerged==1) & (fj_ncquarks==1) )
+    label_Top_bWq_0c: ( (fj_Top_2q==1) & (fj_nprongs == 1) & (fj_Top_bmerged==1) & (fj_ncquarks==0) )
+    label_Top_bWq_1c: ( (fj_Top_2q==1) & fj_nprongs == 1) & (fj_Top_bmerged==1) & (fj_ncquarks==1) )
+    label_Top_bWqq: ( (fj_Top_2q==1) & (fj_nprongs == 2)  & (fj_Top_bmerged==1) )
+    label_Top_bWq: ( (fj_Top_2q==1) & (fj_nprongs == 1) & (fj_Top_bmerged==1) )
+    label_Top_bWev: ( (fj_Top_elenu==1) & (fj_Top_bmerged==1) )
+    label_Top_bWmv: ( (fj_Top_munu==1) & (fj_Top_bmerged==1) )
+    label_Top_bWtauhv: ( (fj_Top_hadtauvqq==1) & (fj_Top_bmerged==1) )
+    label_Top_bWtauev: ( (fj_Top_leptauelvnu==1) & (fj_Top_bmerged==1) )
+    label_Top_bWtaumv: ( (fj_Top_leptaumuvnu==1) & (fj_Top_bmerged==1) )
+    label_Wqq_jets_1c: (fj_V_2q==1) 
+    label_Wqq_jets_0c: (fj_V_2q==1)
 
 preprocess:
     ### method: [manual, auto] - whether to use manually specified parameters for variable standardization
@@ -138,7 +181,7 @@ labels:
 
     type: simple
     value: [
-        fj_ttbar_lepmerged, fj_ttbar_lepsplit, fj_wjets_lepmerged, fj_wjets_lepsplit, fj_QCD_label,
+        fj_ttbar_label, fj_wjets_label,
         fj_isHVV_elenuqq, fj_isHVV_munuqq, fj_H_VV_leptauelvqq, fj_H_VV_leptaumuvqq, fj_H_VV_hadtauvqq
     ]
 
@@ -178,8 +221,48 @@ observers:
    - lep_pt
    - lep_dR_fj
    - met_relpt
-   - fj_ttbar_bmerged
-   - fj_ttbar_bsplit
+   - fj_QCD_label
+   - fj_sig_label
+   - fj_bkgd_label
+   - fj_ttbar_lepmerged
+   - fj_ttbar_lepsplit
+   - fj_wjets_lepsplit
+   - fj_wjets_lepmerged
+   - fj_V_2q
+   - fj_lep_wjets_label
+   - fj_had_wjets_label
+   - label_H_WqqWqq_0c
+   - label_H_WqqWqq_1c
+   - label_H_WqqWqq_2c
+   - label_H_WqqWq_0c
+   - label_H_WqqWq_1c
+   - label_H_WqqWq_2c
+   - label_H_WqqWev_0c
+   - label_H_WqqWev_1c
+   - label_H_WqqWmv_0c
+   - label_H_WqqWmv_1c
+   - label_H_WqqWtauev_0c
+   - label_H_WqqWtauev_1c
+   - label_H_WqqWtaumv_0c
+   - label_H_WqqWtaumv_1c
+   - label_H_WqqWtauhv_0c
+   - label_H_WqqWtauhv_1c
+   - label_QCD_bb
+   - label_QCD_cc
+   - label_QCD_b
+   - label_QCD_c
+   - label_QCD_others
+   - label_Top_bWqq_0c
+   - label_Top_bWqq_1c
+   - label_Top_bWq_0c
+   - label_Top_bWq_1c
+   - label_Top_bWev
+   - label_Top_bWmv
+   - label_Top_bWtauhv
+   - label_Top_bWtauev
+   - label_Top_bWtaumv
+   - label_Wqq_jets_1c
+   - label_Wqq_jets_0c
 
 weights:
    ### [option 1] use precomputed weights stored in the input files
